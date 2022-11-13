@@ -6,15 +6,15 @@ pygame.init()
 window = pygame.display.set_mode([1280, 700]) # -> DEFINIR TAMANHO DA JANELA
 title = pygame.display.set_caption('Futball Pong') # -> DEFINIFR NOME DA APLICAÇÃO
 
+# CARREGAR IMAGENS
+field = pygame.image.load('assets/field.png')
+
 winner = pygame.image.load('assets/win.png')
 
 score1 = 0
 score1Imagem = pygame.image.load('assets/score/0.png')
 score2 = 0
 score2Imagem = pygame.image.load('assets/score/0.png')
-
-# CARREGAR IMAGENS
-field = pygame.image.load('assets/field.png')
 
 player1 = pygame.image.load('images/jogador1.png')
 player1Y= 230
@@ -39,7 +39,8 @@ def elementosDesenho():
         window.blit(ball, (ballX, ballY))
         window.blit(score1Imagem, (515, 50))
         window.blit(score2Imagem, (695, 50))
-        moverBola()
+        #CHAMANDO AS FUNÇÕES
+        moverBola() 
         moverJogador()
         moverJogador2()
     else:
@@ -66,7 +67,8 @@ def moverJogador2():
     player2Y = ballY
 
 
-def moverBola():
+def moverBola(): # -> funções a serem executadas
+    #IMPORTANDO ELEMENTOS PARA DENTRO DA FUNÇÃO
     global ballX
     global ballY
     global ballDirection
@@ -76,6 +78,7 @@ def moverBola():
     global score2
     global score2Imagem
 
+    #DEFININDO PARAMETROS PARA MOVIMENTAÇÃO DA BOLINHA
     ballX += ballDirection
     ballY += ballDirectionY
 
